@@ -1,0 +1,64 @@
+.card{
+  width: 230px;
+  height:350px;
+  border-radius: 10px;
+}
+
+.imageProduct{
+  margin-top: 5px;
+  width: 200px;
+  height: 200px;
+}
+
+.imageBox{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  border-radius: 16px;
+  border: none;
+  height: 30px;
+  width: 130px;
+  font-size: 1.05rem;
+  background-color: #FFDB58;
+  cursor: pointer;
+}
+
+.prittyButton{
+  padding: 0 0 0 5px;
+  margin-top: 20px;
+}
+
+.productDescription{
+  max-height: 20px;
+  padding: 3px 5px 0 5px;
+  font-size: 15px;
+  overflow: hidden;
+  /* Было бы славно услышать фидбек по поводу длинного описания и как его лучше скрыть или же вписать в карточку товара */
+}
+
+.quantity{
+  font-size: 10px;
+  margin: 5px 0 0 0;
+  padding: 0 0 0 5px;
+}
+
+.price{
+  padding: 0 0 0 5px;
+  margin-bottom: 0;
+}
+
+/* Мобильная история */
+
+@media (max-width: 720px){
+  .card{
+    width: 180px;
+    height: 320px
+  }
+
+  .imageProduct{
+    width: 180px;
+    height: 180px;
+  }
+}
