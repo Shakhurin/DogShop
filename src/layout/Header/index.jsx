@@ -1,29 +1,24 @@
+import { Link } from 'react-router-dom'
 import style from './header.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { faBagShopping } from '@fortawesome/free-solid-svg-icons'
-import { faDog } from '@fortawesome/free-solid-svg-icons'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 export const Header = () => {
 
+  const onClick = () => {
+    localStorage.removeItem('token_auth')
+  } 
 
   return (
     <>
       <div className={style.header}>
         <div className={style.wrapper}>
-          <div><img src="/src/assets/dogFoodLogo/dogFoodLogo.png" alt="Logo" className={style.logo} /></div>
+          <div >{localStorage.getItem("token_auth") ? <Link to='products'>Домой</Link> : <Link to='oops'>Домой</Link>}</div>
           <div className={style.searchBarDiv}>
             <input placeholder='Поиск по сайту' type="text" />
           </div>
-          <div className={style.barIcon} id={style.hidden}>
-            <FontAwesomeIcon icon={faBars} size='xl'/>
-          </div>
-          <div className={style.headerIcons}>
-            <FontAwesomeIcon icon={faHeart} size='xl' />
-            <FontAwesomeIcon icon={faBagShopping} size='xl' />
-            <FontAwesomeIcon icon={faDog} size='xl' />
-          </div>
+          {!localStorage.getItem("token_auth") ? <div><Link to="signin">Войти</Link></div> : <div><Link to='user'>Личный кабинет</Link></div>}
+          {!localStorage.getItem("token_auth") ? <div><Link to="signup">Зарегистрироваться</Link></div> : ""}
+          {localStorage.getItem("token_auth") ? <div onClick={onClick}> <Link to='signin'>Выйти</Link></div> : ''}
+          <div></div>
         </div>
       </div>
     </>

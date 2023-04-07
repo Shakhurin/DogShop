@@ -1,4 +1,8 @@
-div{
+body{
   display: flex;
   flex-direction: column;
+}
+
+footer{
+  flex-grow: 1;
 }

@@ -1,6 +1,4 @@
 import style from './footer.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 export const Footer = () => {
 
@@ -32,7 +30,7 @@ export const Footer = () => {
           <p className={style.copyright} id={style.hidden}>© «Интернет-магазин DogFood.ru»</p>
         </div>
         <div>
-          {/* Возникли проблемы с импортом иконок социальных сетей, почему-то их просто нет в базе...*/}
+          <img src="../../assets/footerSVG/instagram-svg" alt="" />
         </div>
       </div>
     </footer>
